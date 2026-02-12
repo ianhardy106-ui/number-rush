@@ -1,9 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Number Rush</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>My Game</h1>
+  <div class="app">
+    <header class="top">
+      <div>
+        <h1>Number Rush</h1>
+        <p class="subtitle">Pick numbers that add up to the target.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="label">Time</div>
+          <div class="value" id="time">60</div>
+        </div>
+        <div class="stat">
+          <div class="label">Score</div>
+          <div class="value" id="score">0</div>
+        </div>
+        <div class="stat">
+          <div class="label">Best</div>
+          <div class="value" id="best">0</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="panel">
+        <div class="targetWrap">
+          <div class="targetLabel">Target</div>
+          <div class="target" id="target">0</div>
+        </div>
+
+        <div class="sumWrap">
+          <div class="sumLabel">Selected Sum</div>
+          <div class="sum" id="sum">0</div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnClear" type="button">Clear</button>
+          <button class="btn primary" id="btnNew" type="button">New Round</button>
+          <button class="btn danger" id="btnRestart" type="button">Restart</button>
+        </div>
+
+        <div class="hint" id="hint">Choose numbers to match the target.</div>
+      </section>
+
+      <section class="board">
+        <div class="grid" id="grid" aria-label="Number grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Tip: You can select multiple tiles. Correct match = +10 points.</span>
+    </footer>
+  </div>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle">
+      <h2 id="gameOverTitle">Time!</h2>
+      <p id="gameOverText">Your score: 0</p>
+      <button class="btn primary" id="btnPlayAgain" type="button">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
